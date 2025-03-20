@@ -17,7 +17,6 @@ This is a **Nest.js** REST API that aggregates electronic part data from multipl
   - Product Documentation URL
   - Product Image URL
   - Source Supplier(s)
-- Data is automatically **pretty-printed** in the browser
 
 ---
 
@@ -50,7 +49,7 @@ Once the server is running, you can query the API endpoint:
 
 ### **GET Endpoint:**
 ```
-GET http://localhost:3000/parts/aggregate?partNumber=0510210200
+(GET) http://localhost:3000/parts/aggregate?partNumber=0510210200
 ```
 
 ---
