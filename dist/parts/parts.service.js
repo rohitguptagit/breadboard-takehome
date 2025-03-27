@@ -28,7 +28,7 @@ let PartsService = class PartsService {
             throw new common_1.NotFoundException('Part number not found in any supplier');
         }
         const aggregatedPart = {
-            name: arrowParts[0]?.description || ttiParts[0]?.description || '',
+            name: arrowParts[0]?.suppPartNum?.name || ttiParts[0]?.ttiPartNumber || '',
             description: arrowParts[0]?.description || ttiParts[0]?.description || '',
             totalStock: this.getTotalStock(arrowParts, ttiParts),
             manufacturerLeadTime: this.getShortestLeadTime(arrowParts, ttiParts),

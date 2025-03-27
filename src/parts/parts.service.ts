@@ -26,13 +26,13 @@ export class PartsService {
         }
 
         const aggregatedPart: AggregatedPart = {
-            name: arrowParts[0]?.description || ttiParts[0]?.description || '',
+            name: arrowParts[0]?.suppPartNum?.name || ttiParts[0]?.ttiPartNumber || '',
             description: arrowParts[0]?.description || ttiParts[0]?.description || '',
             totalStock: this.getTotalStock(arrowParts, ttiParts),
             manufacturerLeadTime: this.getShortestLeadTime(arrowParts, ttiParts),
             manufacturerName: arrowParts[0]?.manufacturer || ttiParts[0]?.manufacturer || '',
             packaging: this.aggregatePackaging(arrowParts, ttiParts),
-            productDoc: this.getProductUrl(arrowParts, ttiParts, 'Datasheet'),
+            productDoc: this.getProductUrl(arrowParts, ttiParts, 'Datasheet'), 
             productUrl: this.getProductUrl(arrowParts, ttiParts, 'Part Details'),
             productImageUrl: this.getProductUrl(arrowParts, ttiParts, 'Image Large'),
             specifications: {}, // No clear specifications format in the data
